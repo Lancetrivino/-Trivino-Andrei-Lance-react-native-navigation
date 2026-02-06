@@ -1,6 +1,5 @@
 import { Product } from '../types';
 
-
 export const products: Product[] = [
   {
     id: 1,
@@ -8,6 +7,12 @@ export const products: Product[] = [
     price: 650.00,
     description: 'A specialized solution for automotive surfaces, engines, and wheels',
     image: require('../../assets/apc.jpg'),
+    features: [
+      'Safe for all automotive surfaces',
+      'Powerful degreasing action',
+      'Biodegradable formula',
+      'Concentrated - dilutable up to 1:10',
+    ],
   },
   {
     id: 2,
@@ -15,6 +20,12 @@ export const products: Product[] = [
     price: 750.00,
     description: 'Formulated to deliver a rich, deep shine to various surfaces.',
     image: require('../../assets/APD.jpg'),
+    features: [
+      'Long-lasting shine & protection',
+      'UV protection to prevent fading',
+      'Non-greasy finish',
+      'Suitable for plastics, rubber & vinyl',
+    ],
   },
   {
     id: 3,
@@ -22,13 +33,25 @@ export const products: Product[] = [
     price: 800.00,
     description: 'fragrance solution designed to infuse the vehicle with a serene and rejuvenating bamboo essence.',
     image: require('../../assets/carfreshener.jpg'),
+    features: [
+      'Fresh bamboo scent',
+      'Eliminates odors naturally',
+      'Lasts up to 60 days',
+      'Adjustable intensity',
+    ],
   },
   {
     id: 4,
     name: 'Premium Car Shampoo',
     price: 650.00,
-    description: 'Durable USB-C cable with fast charging',
+    description: 'High-quality pH-balanced formula for gentle yet effective cleaning',
     image: require('../../assets/carshampoo.jpg'),
+    features: [
+      'pH-balanced formula',
+      'Creates rich foam for easy washing',
+      'Safe for all paint finishes',
+      'Streak-free shine',
+    ],
   },
   {
     id: 5,
@@ -36,6 +59,12 @@ export const products: Product[] = [
     price: 150.00,
     description: 'Oil-based formulas for a long-lasting car ambiance.',
     image: require('../../assets/hanging-difusers.jpg'),
+    features: [
+      'Premium essential oil blend',
+      'Long-lasting fragrance',
+      'Elegant hanging design',
+      'Multiple scent options',
+    ],
   },
   {
     id: 6,
@@ -43,6 +72,12 @@ export const products: Product[] = [
     price: 1000.00,
     description: 'A premium-grade product for total interior rejuvenation',
     image: require('../../assets/interiordetail.jpg'),
+    features: [
+      'Cleans & protects in one step',
+      'Anti-static formula',
+      'UV protection',
+      'Restores original appearance',
+    ],
   },
   {
     id: 7,
@@ -50,6 +85,12 @@ export const products: Product[] = [
     price: 150.00,
     description: 'A high-quality 40cm x 40cm (400GSM) cleaning accessory',
     image: require('../../assets/mircofiber.jpg'),
+    features: [
+      '400GSM premium quality',
+      'Ultra-soft & lint-free',
+      'Highly absorbent',
+      'Machine washable & reusable',
+    ],
   },
   {
     id: 8,
@@ -57,6 +98,12 @@ export const products: Product[] = [
     price: 800.00,
     description: 'A comprehensive collection designed to keep motorcycles looking their best.',
     image: require('../../assets/motorkit.jpg'),
+    features: [
+      'Complete cleaning kit',
+      'Specially formulated for motorcycles',
+      'Includes microfiber cloths',
+      'Professional-grade products',
+    ],
   },
   {
     id: 9,
@@ -64,6 +111,12 @@ export const products: Product[] = [
     price: 600.00,
     description: 'Designed to enhance the natural beauty of tires.',
     image: require('../../assets/tireblackclear.jpg'),
+    features: [
+      'Natural matte finish',
+      'Long-lasting protection',
+      'Prevents tire browning',
+      'Non-sling formula',
+    ],
   },
   {
     id: 10,
@@ -71,5 +124,11 @@ export const products: Product[] = [
     price: 1000.00,
     description: 'A solution for a "sleek and sophisticated" look.',
     image: require('../../assets/Tirecream.jpg'),
+    features: [
+      'High-gloss wet look finish',
+      'UV protection',
+      'Water-resistant formula',
+      'Easy application',
+    ],
   },
 ];

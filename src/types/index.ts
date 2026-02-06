@@ -1,21 +1,18 @@
 import { ImageSourcePropType } from 'react-native';
-// Product interface
+
 export interface Product {
   id: number;
   name: string;
   price: number;
   description: string;
-  image?: ImageSourcePropType;  // For local images
-  imageUrl?: string;             // For remote URLs
+  image: ImageSourcePropType;
+  features: string[]; // ← NEW: Array of product-specific features
 }
 
-// Cart item interface (extends Product with quantity)
 export interface CartItem extends Product {
   quantity: number;
-  image: ImageSourcePropType;
 }
 
-// Theme colors interface
 export interface Theme {
   background: string;
   surface: string;
@@ -30,14 +27,12 @@ export interface Theme {
   shadow: string;
 }
 
-// Theme context interface
 export interface ThemeContextType {
   theme: Theme;
   isDarkMode: boolean;
   toggleTheme: () => void;
 }
 
-// Cart context interface
 export interface CartContextType {
   cartItems: CartItem[];
   addToCart: (product: Product) => void;
@@ -48,9 +43,9 @@ export interface CartContextType {
   getTotalItems: () => number;
 }
 
-// Navigation prop types
 export type RootStackParamList = {
   Home: undefined;
   Cart: undefined;
   Checkout: undefined;
+  ProductDetail: { product: Product };
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ThemeProvider, CartProvider } from './src/contexts';
-import { HomeScreen, CartScreen, CheckoutScreen } from './src/screens';
+import { HomeScreen, CartScreen, CheckoutScreen, ProductDetailScreen } from './src/screens';
 import { RootStackParamList } from './src/types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -21,6 +21,7 @@ const App: React.FC = () => {
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Cart" component={CartScreen} />
             <Stack.Screen name="Checkout" component={CheckoutScreen} />
+            <Stack.Screen name="ProductDetail" component={ProductDetailScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </CartProvider>

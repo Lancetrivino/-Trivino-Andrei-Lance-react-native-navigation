@@ -1,23 +1,36 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useTheme, useCart } from '../contexts';
-import { Product } from '../types';
+import { Product, RootStackParamList } from '../types';
 import { styles } from './ProductCard.styles';
 
 interface ProductCardProps {
   product: Product;
 }
 
+type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>;
+
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { theme } = useTheme();
   const { addToCart } = useCart();
+  const navigation = useNavigation<NavigationProp>();
 
   const handleAddToCart = (): void => {
     addToCart(product);
   };
 
+  const handleCardPress = (): void => {
+    navigation.navigate('ProductDetail', { product });
+  };
+
   return (
-    <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border }]}>
+    <TouchableOpacity 
+      style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border }]}
+      onPress={handleCardPress}
+      activeOpacity={0.7}
+    >
       <View style={[styles.imageContainer, { backgroundColor: theme.primary + '10' }]}>
         <Image 
           source={product.image} 
@@ -46,14 +59,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           
           <TouchableOpacity
             style={[styles.addButton, { backgroundColor: theme.primary }]}
-            onPress={handleAddToCart}
+            onPress={(e) => {
+              e.stopPropagation(); // Prevent card press when tapping Add button
+              handleAddToCart();
+            }}
             activeOpacity={0.7}
           >
             <Text style={styles.addButtonText}>Add +</Text>
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
