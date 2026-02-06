@@ -6,7 +6,7 @@ export interface Product {
   price: number;
   description: string;
   image: ImageSourcePropType;
-  features: string[]; // ← NEW: Array of product-specific features
+  features: string[]; 
 }
 
 export interface CartItem extends Product {

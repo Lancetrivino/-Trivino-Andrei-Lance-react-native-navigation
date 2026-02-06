@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
   height: 225, // Set a fixed height
   borderTopLeftRadius: 8,
   borderTopRightRadius: 8,
-  overflow: 'hidden', // This is important!
+  overflow: 'hidden', 
 },
   iconCircle: {
     width: 70,
